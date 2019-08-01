@@ -1,10 +1,4 @@
 <?php
-function inspiry_cream_child_theme_setup() {
-	load_child_theme_textdomain( 'framework', get_stylesheet_directory() . '/languages' );
-}
-
-add_action( 'after_setup_theme', 'inspiry_cream_child_theme_setup' );
-
 /*-----------------------------------------------------------------------------------*/
 /*	Enqueue Styles in Child Theme
 /*-----------------------------------------------------------------------------------*/
@@ -29,3 +23,8 @@ if ( ! function_exists( 'inspiry_enqueue_child_styles' ) ) {
 	}
 	add_action( 'wp_enqueue_scripts', 'inspiry_enqueue_child_styles', PHP_INT_MAX );
 }
+
+function inspiry_cream_child_theme_setup() {
+	load_child_theme_textdomain( 'cream-theme-child', get_stylesheet_directory() . '/languages' );
+}
+add_action( 'after_setup_theme', 'inspiry_cream_child_theme_setup' );
